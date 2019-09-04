@@ -42,7 +42,7 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{Straw Frequencies $\bullet$ November 2015 $\bullet$ Mu2e-doc-6392-v5 } % Custom header text
+\fancyhead[C]{Straw Frequencies $\bullet$ September 2019 $\bullet$ Mu2e-doc-6392-v5 } % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage[english]{babel}
@@ -63,10 +63,9 @@
 
 \author{
 \large
-%\textsc{Jason Bono}\thanks{Thanks to David Brown of Berkley Lab}\\[2mm] % Your name
-\textsc{Jason Bono}\\[2mm] % Your name
-\normalsize Rice University \\ % Your institution
-\normalsize \href{mailto:jason.s.bono@gmail.com}{jason.s.bono@gmail.com} % Your email address
+\textsc{Jason Bono}\\[2mm]
+\normalsize Fermilab \\ 
+\normalsize \href{mailto:jason.s.bono@gmail.com}{jason.s.bono@gmail.com} 
 \vspace{-5mm}
 }
 \date{}
@@ -85,7 +84,8 @@
 
 \begin{abstract}
 
-\noindent For straw-tubes, the relationship between their tension and natural frequencies is needed for most tension measurement techniques.  Furthermore, recent data are in disagreement with previous treatments.  In this document, the straw-tube is treated as a medium with two restoring forces; one arising from the tension applied to the straws, and the other arising from their flexural rigidity, or bending stiffness. The resultant equation of motion with the appropriate boundary conditions gives rise to a functional form for natural frequencies that matches the recent measurements.  %In this document we consider an additional restoring force that comes from the rigidity of the straw-tube itself even when tension is zero
+\noindent For straw-tubes, the relationship between their tension and natural frequencies is needed for most tension measurement techniques.  Furthermore, recent data are in disagreement with previous treatments.  In this document, the straw-tube is treated as a medium with two restoring forces; one arising from the tension applied to the straws, and the other arising from their flexural rigidity, or bending stiffness. The resultant equation of motion with the appropriate boundary conditions gives rise to a functional form for natural frequencies that matches the recent measurements.  However, the model's parameter values as calculated by theory and past experiment are in disagreement. This disagreement is then resolved by a new, larger experiment that reproduces the theory model and its parameter values under a wide variety of experimental conditions.
+
 
 \end{abstract}
 
@@ -96,9 +96,10 @@
 \begin{multicols}{2} % Two-column layout throughout the main article text
 
 
-%------------------------------------------------------------
 
-
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
 \section{Restoring Forces}
 Here we consider the straw-tube as a medium with two restoring forces: one arising from the tension applied to the straws, and the other from their \emph{flexural rigidity}, or \emph{bending stiffness}.  After the initial displacement, the straw motion is driven by these the two forces alone. Thus for a straw segment of width $dx$, the equation of motion is
 \begin{equation}
@@ -142,7 +143,6 @@ Plugging the above expression back into the equation of motion reveals a fourth-
 }
 \end{equation}
 
-
 Incidentally, the bending stiffness can be evaluated from the \emph{young's modulus}, $E$ of the material and the \emph{second moment of area} of its cross section, $I$,
 \begin{equation}
 B = E I
@@ -150,9 +150,9 @@ B = E I
 Note that throughout this document, the cross section refers to that which has its normal vector parallel to the straw length.
 
 
-
-
-
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
 \section{General Solution to the Equation of Motion}
 Beginning with Equation~\ref{eq:it}, and making the $x$ and $t$ dependence of the vertical displacement explicit, we have 
 \begin{equation}
@@ -239,7 +239,9 @@ The solution to the equation of motion, under appropriate boundary conditions, w
 
 
 
-
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
 \section{Perfectly Glued Straws}
 The straws are glued at both ends so that they may not oscillate or rotate.  The boundary conditions are thus
 \begin{equation}
@@ -290,14 +292,15 @@ For straws that are long, or under a large tension, the second order terms in $\
   f_n \approx  \frac{n}{2L}\sqrt{\frac{T}{\mu}}  (1 + \frac{2}{L}  \sqrt{\frac{B}{T}} )
  \label{eq:end}
   \end{equation}
-or
-  \begin{equation}
-  f_n \approx  \frac{n}{2L}\sqrt{\frac{T}{\mu}}  (1 + \frac{2}{L}  \sqrt{\frac{B}{T}} )
-  \end{equation}
 
 
 
 
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
 \section{Predicted v.s. Experimental Form}
 We see from Equation~\ref{eq:hence} that to first order in $\xi$, the bending stiffness introduces one extra term in what would otherwise be the natural frequencies of a simple string. This term increases the natural frequency by an amount
 \begin{equation}
@@ -489,52 +492,9 @@ which gives
 
 
 
-
-
-\section{Direct Measurements}
-As a cross check for the predicted frequency parameters $\mathcal{K}$ and $\mathcal{C}_n$, the values of $\mu$ and $B$ were measured for the PPG straws, which are the current straws being used for the panel construction. The Lamina straws that were used in the tests at Rice slightly differ from the PPG straws, which have a total of 800 \r{A} of aluminum and 100 \r{A} of gold. This difference in metallization should not measurably effect $\mu$ and is calculated to have only a few percent effect bending stiffness.  For $\mu$, the weight of a several meter long sample of straw-tubing was measured, while the latter was found by the vertical deflection, $\Delta y$ in the setup illustrated in Figure~\ref{fig:deflect} and the relation
-\begin{equation}
-B = \frac{7  \mu g L^4}{24 \Delta y}
-\end{equation}
-\begin{figure}[H]
-	\includegraphics[width=0.37\textwidth]{pics/deflect}
-	\caption{A segment of a straw}
-	\label{fig:deflect}
-\end{figure}
-The outcome  of the density measurement was
-\begin{equation}
-	\mu_\text{mes} = \text{  (3.48 $\pm$ 0.06)e-4  kg m}^{-1}
-\label{eq:mesmu}
-\end{equation}
-which yields
-\begin{equation}
-\boxed{
-\mathcal{K}_\text{mes}  = \text{(167.8 $\pm$ 2.9) m s}^{-1} \text{kg}^{-1/2}
-}
-\end{equation}
-Note that $\mu$ was measured at 10\% relative humidity, while the Rice tests were conducted at 50\%. Additionally, the straws at the rice tests were excessively handled, which raises $\mu$.  The effect of humidity and handling on $\mu$ has not been quantitatively studied however.
-
-
-The measurement of the bending stiffness was found to be highly dependent on the straw's history and handling. To this extent, there was uncertainty in the measurements. It was found that
-\begin{equation}
-	B_\text{mes} = \text{  (3.6 $\pm$ 1.0 )e-3  N$\cdot$m}^2
-\end{equation}
-which is in agreement with both the predicted value in Equations~\ref{eq:b} and \ref{eq:totb}. 
-
-A second approach was taken to measure $B$.  A straw was fixed at either end and held at zero tension. The straw was then plucked and its oscillations were recorded using a 240-fps slow motion camera.   In this scenario however Equation~\ref{eq:full} breaks down. Instead, the formula
-\begin{equation}
-	f \approx \frac{9 \pi}{8 L^2}\sqrt{\frac{B}{\mu}}
-\end{equation}
-can used to determine $B$ once $f$ is found by counting the number of oscillations in a given time interval.
- Note that the above equation was found numerically after from solving the original equations of motion with $T=0$, is a similar manner as was taken for large $T$.  The observed frequency gave a value of 
- \begin{equation}
- B_\text{count} = \text{  (2.7 $\pm$ 1.1 )e-3  N$\cdot$m}^2
- \end{equation}
-which is on the smaller of the other estimates. The above value will be disregarded until a more systematic study is done.
-
-
-
-
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
 \section{Boundary Effects}
 \label{sec:boun}
 The angled straw-insert introduces uncertainty on the location and quality of the first point constraint.  This could effect the natural frequencies in two ways: (1), it creates uncertainty in the straw length, and (2), it partially lifts the boundary constraints.
@@ -592,6 +552,96 @@ Incomplete gluing or constraining of the straw thus mitigates the effect that be
 
 
 %It is important to note that other effects, such as the straw-out-of-straightness, stretching, and further contributions to the uncertainty in straw length have been ignored. The first two effects have been considered elsewhere. The latter mentioned effect however has not been evaluated since it has only become an issue with the most recent gluing procedure. In particular, the true straw length depends upon the amount by which the glue creeps up the straw length, within the insert holes, which is itself, dependent on the amount of glue used and the location of the injection site . 
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\section{Theory Summary}
+The harmonics of glued straws, which have no motion at their ends, should theoretically follow
+\begin{equation}
+\label{main}
+f^\text{glued}_n \approx   (\frac{\mathcal{K}_n\sqrt{m}}{2L}  +  \frac{\mathcal{C}_n}{L^2} )
+\end{equation}
+whereas the harmonics of pinned straws, which are allowed rotational but not transnational motion,  should follow
+\begin{equation}
+f^{\text{clamped}}_n =  \frac{n}{2L}\sqrt{\frac{T}{\mu}}  \sqrt{\frac{n^2\pi^2B}{TL^2} + 1}
+\end{equation}
+In particular, when the tension is zero, then
+\begin{equation}
+f^{\text{clamped}}_n =  \frac{\pi n^2}{2L^2} \sqrt{\frac{B}{\mu} } = \frac{\pi n}{2L^2} \mathcal{C}_n
+\end{equation}
+with
+\begin{equation}
+\mathcal{C}_n = n \sqrt{\frac{B}{\mu}}
+\end{equation}
+and 
+\begin{equation}
+\mathcal{K}_n = n\sqrt{\frac{g}{\mu}}
+\end{equation}
+Equation \ref{main} was confirmed in a past experiment, indicating we have at least partial understanding. However, the two parameters have theoretical values that are inconsistent with that same past experiment.
+
+Which have theoretical values of 
+\begin{equation}
+\mathcal{K} =  \text{ 157.29  m s}^{-1} \text{kg}^{-1/2}
+\end{equation}
+
+\begin{equation}
+\mathcal{C}_1
+\end{equation}
+
+ 
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\section{Direct Measurements}
+As a cross check for the predicted frequency parameters $\mathcal{K}$ and $\mathcal{C}_n$, the values of $\mu$ and $B$ were measured for the PPG straws, which are the current straws being used for the panel construction. The Lamina straws that were used in the tests at Rice slightly differ from the PPG straws, which have a total of 800 \r{A} of aluminum and 100 \r{A} of gold. This difference in metallization should not measurably effect $\mu$ and is calculated to have only a few percent effect bending stiffness.  For $\mu$, the weight of a several meter long sample of straw-tubing was measured, while the latter was found by the vertical deflection, $\Delta y$ in the setup illustrated in Figure~\ref{fig:deflect} and the relation
+\begin{equation}
+B = \frac{7  \mu g L^4}{24 \Delta y}
+\end{equation}
+\begin{figure}[H]
+	\includegraphics[width=0.37\textwidth]{pics/deflect}
+	\caption{A segment of a straw}
+	\label{fig:deflect}
+\end{figure}
+The outcome  of the density measurement was
+\begin{equation}
+	\mu_\text{mes} = \text{  (3.48 $\pm$ 0.06)e-4  kg m}^{-1}
+\label{eq:mesmu}
+\end{equation}
+which yields
+\begin{equation}
+\boxed{
+\mathcal{K}_\text{mes}  = \text{(167.8 $\pm$ 2.9) m s}^{-1} \text{kg}^{-1/2}
+}
+\end{equation}
+Note that $\mu$ was measured at 10\% relative humidity, while the Rice tests were conducted at 50\%. Additionally, the straws at the rice tests were excessively handled, which raises $\mu$.  The effect of humidity and handling on $\mu$ has not been quantitatively studied however.
+
+
+The measurement of the bending stiffness was found to be highly dependent on the straw's history and handling. To this extent, there was uncertainty in the measurements. It was found that
+\begin{equation}
+	B_\text{mes} = \text{  (3.6 $\pm$ 1.0 )e-3  N$\cdot$m}^2
+\end{equation}
+which is in agreement with both the predicted value in Equations~\ref{eq:b} and \ref{eq:totb}. 
+
+A second approach was taken to measure $B$.  A straw was fixed at either end and held at zero tension. The straw was then plucked and its oscillations were recorded using a 240-fps slow motion camera.   In this scenario however Equation~\ref{eq:full} breaks down. Instead, the formula
+\begin{equation}
+	f \approx \frac{9 \pi}{8 L^2}\sqrt{\frac{B}{\mu}}
+\end{equation}
+can used to determine $B$ once $f$ is found by counting the number of oscillations in a given time interval.
+ Note that the above equation was found numerically after from solving the original equations of motion with $T=0$, is a similar manner as was taken for large $T$.  The observed frequency gave a value of 
+ \begin{equation}
+ B_\text{count} = \text{  (2.7 $\pm$ 1.1 )e-3  N$\cdot$m}^2
+ \end{equation}
+which is on the smaller of the other estimates. The above value will be disregarded until a more systematic study is done.
+
+
+
+
+
 
 
 \section{Second Order Frequency Effects}
