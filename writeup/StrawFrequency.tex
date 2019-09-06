@@ -33,8 +33,8 @@
 \renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
 
 \usepackage{titlesec} % Allows customization of titles
-\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
-\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
+%\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+%\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
 \titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
 \titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
 
@@ -96,11 +96,11 @@
 \begin{multicols}{2} % Two-column layout throughout the main article text
 
 
-
+\section{General Framework}
 %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
-\section{Restoring Forces}
+\subsection{Restoring Forces}
 Here we consider the straw-tube as a medium with two restoring forces: one arising from the tension applied to the straws, and the other from their \emph{flexural rigidity}, or \emph{bending stiffness}.  After the initial displacement, the straw motion is driven by these the two forces alone. Thus for a straw segment of width $dx$, the equation of motion is
 \begin{equation}
 \mu dx \frac{\partial^2y}{\partial t^2}  = \frac{\partial F_t}{\partial x}dx + \frac{\partial F_b}{\partial x}dx 
@@ -150,10 +150,12 @@ B = E I
 Note that throughout this document, the cross section refers to that which has its normal vector parallel to the straw length.
 
 
+
+
 %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
-\section{General Solution to the Equation of Motion}
+\subsection{General Solution to the Equation of Motion}
 Beginning with Equation~\ref{eq:it}, and making the $x$ and $t$ dependence of the vertical displacement explicit, we have 
 \begin{equation}
 \mu \frac{\partial^2y(x,t)}{\partial t^2} = T \frac{\partial^2y(x,t)}{\partial x^2} - B \frac{\partial^4y(x,t)}{\partial x^4}
@@ -238,11 +240,10 @@ The solution to the equation of motion, under appropriate boundary conditions, w
 
 
 
-
 %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
-\section{Perfectly Glued Straws}
+\subsection{Perfectly Glued Straws}
 The straws are glued at both ends so that they may not oscillate or rotate.  The boundary conditions are thus
 \begin{equation}
 \label{eq:clamped}
@@ -296,206 +297,10 @@ For straws that are long, or under a large tension, the second order terms in $\
 
 
 
-
-
 %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
-\section{Predicted v.s. Experimental Form}
-We see from Equation~\ref{eq:hence} that to first order in $\xi$, the bending stiffness introduces one extra term in what would otherwise be the natural frequencies of a simple string. This term increases the natural frequency by an amount
-\begin{equation}
-\Delta f_n =  2 \xi \mathcal{F}_n
-\end{equation}
-Defining the constant 
-\begin{equation}
-\mathcal{C}_n \equiv n \sqrt{\frac{B}{\mu}}
-\label{eq:c}
-\end{equation}
-we can write
-\begin{equation}
-\Delta f_n =  \frac{\mathcal{C}_n}{L^2}
-\end{equation}
-
-
-It was found experimentally by \cite{david} that the first natural frequency of the Mylar straw-tubes used in Mu2e followed 
-\begin{equation}
-\boxed{
-	f^\text{exp}_1 = \frac{\mathcal{K}^\text{exp}}{2L}\sqrt{m} + \frac{\mathcal{C}^\text{exp}}{L^2}
-}
-\end{equation}
-where $m$ is the mass of the weight used for tensioning the straw.  The above expression is equivalent to Equation~\ref{eq:end} for $n=1$, provided that
-\begin{equation}
-	\mathcal{C}^\text{exp} = \mathcal{C}_1
-\end{equation}
-where $\mathcal{C}_1$ is defined in Equation~\ref{eq:c},
-and 
-\begin{equation}
-\mathcal{K}^\text{exp} = \sqrt{\frac{g}{\mu}} \equiv \mathcal{K} 
-\end{equation}
-where $g$ is the acceleration due to gravity.
-
-
-
-
-
-\section{Predicted v.s. Experimental Parameter Values}
-\label{sec:prop}
-Here we compute the values of $\mathcal{K}$ and $\mathcal{C}_n$ based off the properties of Mylar and compare with what was found experimentally. 
-Neglecting the metallization layer, the Mu2e straws are Mylar tubes, 5 mm in diameter and with a wall thickness of 18 $\mu$m.  In terms of mass however, the effective wall thickness is 15 $\mu$m.
-
-For an annulus with inner and outer diameter $r_i = 2.485 \text{ mm}$ and $r_o = 2.5 \text{ mm}$, we have  a cross sectional area of
-\begin{equation}
-A =  \text{2.35e-7 m}^2
-\end{equation}
-The second moment of area, assuming 18 $\mu$m wall thickness is
-\begin{equation}
-I = \frac{\pi}{4}(r^4_o - r^4_1) = \text{8.931e-13 m}^4
-\end{equation}
-When assuming 15 $\mu$m wall thickness one gets
-\begin{equation}
-I = \frac{\pi}{4}(r^4_o - r^4_1) = \text{7.297e-13 m}^4
-\end{equation}
-
-
-
-
-The Young's modulus of Mylar is 
-\begin{equation}
-	E = \text{4.90e9 Pa}
-\end{equation}
-which gives a bending stiffness (assuming 18)
-\begin{equation}
-B = EI = \text{  4.377e-3  N$\cdot$m}^2
-\label{eq:b}
-\end{equation}
-which gives a bending stiffness (assuming 15)
-\begin{equation}
-B = EI = \text{  3.575e-3  N$\cdot$m}^2
-\end{equation}
-When assuming 12 $\mu$m wall thickness one gets
-\begin{equation}
-B = 0.00286562303
-\end{equation}
-
-
-The density of Mylar is
-\begin{equation}
-\rho = \text{1390 kg m}^{-3}
-\end{equation}
-Thus the linear density is
-\begin{equation}
-\mu = A \rho = \text{   3.266e-4  kg m}^{-1}
-\end{equation}
-The constant $\mathcal{K}$ is thus
-\begin{equation}
-\boxed{
-	\mathcal{K} = \sqrt{\frac{g}{\mu}} = \text{ 173.2   m s}^{-1} \text{kg}^{-1/2}
-}
-\end{equation}  
-as compared with what was found experimentally, 
-\begin{equation}
-\mathcal{K}^\text{exp}  = \text{(144.93 $\pm$ 2.49) m s}^{-1} \text{kg}^{-1/2}
-\end{equation}
-Finally, the constant $\mathcal{C}_n$ is
-\begin{equation}
-\boxed{
-\mathcal{C}_n =  n \sqrt{\frac{B}{\mu}} = n\cdot\text{ 3.66  m}^{2} \text{s}^{-1}
-}
-\end{equation} 
-as compared with what was found experimentally,
-\begin{equation}
-	\mathcal{C}^\text{exp}_1 = \text{ (6.18 $\pm$ 0.34)  m}^{2} \text{s}^{-1}
-\end{equation} 
-
-%One source of uncertainty in the predicted values of $\mathcal{K}$ and $\mathcal{C}$ come from neglecting the glue and metallization layers on the Mylar.  The exclusion of this material results in an underestimation of both the linear mass density and the bending stiffness. This should result in a overestimate of $\mathcal{K}$ and an underestimate for $\mathcal{C}_n$, as is what seems to be the case.  Sources of experimental uncertainty are discussed in \cite{david}.  
-
-Next we evaluate the effect of the metallization layers for the Lamina straws used by \cite{david}. The second moment of area of a 500 \r{A} layer of copper on the inside of the tube is
-\begin{equation}
-	I_c = \frac{\pi}{4}(0.0025^4 - 2.49995^4) = 2.4540\text{e-15 m}^4 
-\end{equation}
-while for 1000 \r{A} of aluminum on the outside it is
-\begin{equation}
-I_a = \frac{\pi}{4}( 0.0025001^4 - 0.0025^4) = 4.9090\text{e-15 m}^4 
-\end{equation}
-
-The Young's modulus of copper is
-\begin{equation}
-E_c = 1\text{1.17e11 Pa} 
-\end{equation}
-and for aluminum, it is
-\begin{equation}
-E_a = \text{7e10 Pa} 
-\end{equation}
-However, it has been found that the aluminum layer on similar straws oxidizes all the way through, forming a layer of alumina which has a Young's modulus around
-\begin{equation}
-E_a \approx \text{4e11 Pa} 
-\end{equation}
-The copper layer also oxidizes, but the Young's modulus of CuO is not greatly different than that of Cu.
-So, the bending stiffness of the copper and aluminum layers are respectively
-\begin{equation}
-B_c = \text{2.87e-4  N$\cdot$m}^2
-\end{equation}
-and
-\begin{equation}
-B_a = \text{1.9636e-3  N$\cdot$m}^2
-\end{equation}
-and the total bending stiffness is given by adding the layers
-\begin{equation}
-B^\text{lamina} = B + B_a + B_c = \text{6.62709e-3  N$\cdot$m}^2
-\label{eq:totb}
-\end{equation}
-This gives a modified prediction for the parameter
-\begin{equation}
-\boxed{
-	\mathcal{C}^\text{lamina}_n =  n\cdot\text{ 4.50 m}^{2} \text{s}^{-1}
-}
-\end{equation} 
-which is also smaller than the experimental value.
-
-
-
-\section{Virtual Mass}
-The density of air is 1.225 kg/m$^3$, the cross sectional area is 0.000019625 m$^-2$ thus the added mass from air inside the straw is 
-\begin{equation}
-\mu_{\text{air}} = \text{2.404e-5  kg/m}
-\end{equation}
-and the virtual mass adds the same amount,
-\begin{equation}
-\mu_{\text{virtual}} = \text{2.404e-5  kg/m}
-\end{equation}
-thus the total linear mass density is 
-\begin{equation}
-\mu_{\text{total}} = \text{3.7468e-4  kg/m}
-\end{equation}
-Alternatively, adding the two air terms to the measured linear density gives
-\begin{equation}
-\mu_{\text{total}} = \text{3.9608e-4  kg/m}
-\end{equation}
-which gives 
-\begin{equation}
-\boxed{
-	\mathcal{K} = \sqrt{\frac{g}{\mu}} = \text{ 157.29  m s}^{-1} \text{kg}^{-1/2}
-}
-\end{equation}  
-
-
-%What remains is to justify neglecting second order and higher terms in the dimensionless parameter $\xi^2$. The straws are initially tensioned at 0.7 kgf, or 6.8 n.  To be conservative we suppose the tension in a straw is 2 n.  We then have
-%\begin{equation}
-%	\xi \approx \frac{0.06}{L} 
-%\end{equation}
-%where $L$ is measured in meters.
-%To illustrate the last point, let us assume that the excluded material is responsible for the discrepancy in $\mathcal{K}$, then the true linear mass density is 
-%\begin{equation}
-%	\mu^\text{exp} = \mu (\frac{\mathcal{K}^\text{exp}}{\mathcal{K}})^2
-%\end{equation}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%
-\section{Boundary Effects}
+\subsection{Non-trivial Boundary Effects}
 \label{sec:boun}
 The angled straw-insert introduces uncertainty on the location and quality of the first point constraint.  This could effect the natural frequencies in two ways: (1), it creates uncertainty in the straw length, and (2), it partially lifts the boundary constraints.
 
@@ -554,6 +359,181 @@ Incomplete gluing or constraining of the straw thus mitigates the effect that be
 %It is important to note that other effects, such as the straw-out-of-straightness, stretching, and further contributions to the uncertainty in straw length have been ignored. The first two effects have been considered elsewhere. The latter mentioned effect however has not been evaluated since it has only become an issue with the most recent gluing procedure. In particular, the true straw length depends upon the amount by which the glue creeps up the straw length, within the insert holes, which is itself, dependent on the amount of glue used and the location of the injection site . 
 
 
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\subsection{Predicted v.s. Experimental Form}
+We see from Equation~\ref{eq:hence} that to first order in $\xi$, the bending stiffness introduces one extra term in what would otherwise be the natural frequencies of a simple string. This term increases the natural frequency by an amount
+\begin{equation}
+\Delta f_n =  2 \xi \mathcal{F}_n
+\end{equation}
+Defining the constant 
+\begin{equation}
+\mathcal{C}_n \equiv n \sqrt{\frac{B}{\mu}}
+\label{eq:c}
+\end{equation}
+we can write
+\begin{equation}
+\Delta f_n =  \frac{\mathcal{C}_n}{L^2}
+\end{equation}
+
+
+It was found experimentally by \cite{david} that the first natural frequency of the Mylar straw-tubes used in Mu2e followed 
+\begin{equation}
+\boxed{
+	f^\text{exp}_1 = \frac{\mathcal{K}^\text{exp}}{2L}\sqrt{m} + \frac{\mathcal{C}^\text{exp}}{L^2}
+}
+\end{equation}
+where $m$ is the mass of the weight used for tensioning the straw.  The above expression is equivalent to Equation~\ref{eq:end} for $n=1$, provided that
+\begin{equation}
+	\mathcal{C}^\text{exp} = \mathcal{C}_1
+\end{equation}
+where $\mathcal{C}_1$ is defined in Equation~\ref{eq:c},
+and 
+\begin{equation}
+\mathcal{K}^\text{exp} = \sqrt{\frac{g}{\mu}} \equiv \mathcal{K} 
+\end{equation}
+where $g$ is the acceleration due to gravity.
+
+
+\newpage
+\section{Values of Model Parameters}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\subsection{Theory v.s. Experiment}
+\label{sec:prop}
+\subsubsection{The density parameter:} 
+The past empirical value of $\mathcal{K}_1$ is 
+\begin{equation}
+\mathcal{K}^\text{past exp}_1  = \text{(144.93 $\pm$ 2.49) m s}^{-1} \text{kg}^{-1/2}
+\end{equation}
+We can compute the theoretical value of $\mathcal{K}_1$ by considering:
+\begin{itemize}
+	\item the mass of the straw material
+	\begin{itemize}
+		\item a 5 mm Mylar straw with walls of 15 $\mu$m thickness should have a density of 3.3x10-4 kg/m 
+	\end{itemize}
+	\item the mass of the air inside the straw
+	\begin{itemize}
+		\item this should contribute another 2.4 x10-5 kg/m under ordinary weather conditions
+	\end{itemize}
+	\item the effective "virtual mass" of the air outside the straw
+	\begin{itemize}
+		\item this should contribute another 2.4 x10-5 kg/m under ordinary weather conditions
+		\item note that is a dynamically generated inertial term that is not derived in this document
+	\end{itemize}
+	\item the mass of absorbed water vapor in the straw's bulk
+	\begin{itemize}
+		\item negligible
+	\end{itemize}
+\end{itemize}
+The total effective linear mass density is thus 3.8 x10-4 kg/m with roughly a 1\% uncertainty, giving
+\begin{equation}
+\mathcal{K}^\text{calc}_1 = (157.3 \pm 1.6) \text{ m s}^{-1} \text{kg}^{-1/2}
+\end{equation}
+Which does not match the past empirical value.
+
+\subsubsection{The stiffness parameter:}
+The past empirical value of $\mathcal{C}^\text{calc}_1$ is 
+\begin{equation}
+\mathcal{C}^\text{past exp}_1 = \text{ (6.18 $\pm$ 0.34)  m}^{2} \text{s}^{-1}
+\end{equation} 
+We can compute the theoretical value $\mathcal{C}^\text{calc}_1$ by considering:
+\begin{itemize}
+	\item the Young's modulus of the Mylar
+	\item the Young's modulus of the straws metalization layers
+	\item the change in Young's modulus of the metalization due to oxidation 
+	\item the second moment of area of the mentioned layers of the straw 
+\end{itemize}
+Any layer in the straw should be treated as an annulus, so the second moment of area for a layer is
+\begin{equation}
+I = \frac{\pi}{4}(r^4_o - r^4_i)
+\end{equation}
+where $r_o$ and $r_i$ are the outer and inner radii.  The bending stiffness for any layer is then
+\begin{equation}
+B = E I
+\end{equation}
+where $E$ is the Young's modulus of that layer. While the straws' masses are such that the wall thickness is constant, defects in the manufacturing process results in variations in wall thickness due to gaps. So while the total material is not affected, the moment of area, and hence the bending stiffness, is potentially affected. We therefore consider an effective radius of between 12 and 15 $\mu$m. Additionally, there is 1000 \AA of metalization on the straws. Anywhere between all and none of it can be oxidized at any one point. Using the known Young's moduli for aluminum, alumina, and Mylar, we get the range
+\begin{equation}
+B = (4.16 \pm 1.38)e-3  \text{ N }  \text{m}^2
+\end{equation}
+which gives the range
+\begin{equation}
+\mathcal{C}^\text{calc}_1 = (3.26 \pm 0.56) \text{ m}^2 \text{s}^{-1}
+\end{equation}
+Note that even though we made a liberal calculation, this parameter's theoretical value differs greatly from what was found empirically.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\subsection{Direct  Measurements}
+Because of the discrepancy between theory and empirical values for the model parameters, the parameters were measured directly. The dominant term in the density parameter, $\mathcal{K}$, was found by measuring several meters worth of straw on a precision scale. When the mass of interior air, as well as the virtual mass of air was added the direct measurement value was within 1\% of the theoretical one. \\
+\\
+Similarly, the stiffness parameter $\mathcal{C}$ was measured directly by combining the direct density measurements with deflection measurements as shown in Figure\ref{fig:bend}.
+
+\begin{figure}[H]
+	\includegraphics[width=0.48\textwidth]{pics/bend}
+	\caption{A 1 meter straw deflecting under its own weight on a precision surface. Measurements of the deflection were done optically with 25 micron precision.}
+	\label{fig:bend}
+\end{figure}
+The directly measured value of $\mathcal{C}$ fell well within the theoretical range and disagreed with the past empirical values. While this suggests that the theoretical model may be complete and correct, it does not do so definitively. Therefore, additional higher order effects that would appear dynamically were investigated.
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\subsection{Ruling out Hidden Effects}
+A number of additional frequency effects were calculated and found to be insufficient to explain the discrepancy between predicted and measured parameter values. Such effects included the damping caused by air resistance, the reduction of $\mu$ due to straw stretching, second order terms in the frequency relationship, complex boundary conditions (treated in Section~\ref{sec:boun}), straw out of straightness, and shear forces. For the shear, it was found that
+\begin{equation}
+\frac{B}{\kappa L^2 G A}\approx 0.0033 << 1
+\end{equation}
+for a one meter straw, which means the shear term in the equations of motion may be neglected. The out of straightness or s-shape of the straw can was similarly evaluated and also found to close to zero. 
+
+
+The effect of air resistance was found by considering an a damping term in the equation of motion, under the assumption of laminar flow.  The effect was found to be
+\begin{equation}
+f_\text{air} = f\sqrt{1 - \frac{\gamma^2}{f^2}}
+\label{eq:air}
+\end{equation}
+where $\gamma$ is given by
+\begin{equation}
+\gamma = \frac{f A \rho_\text{air}}{M^2} (M  \sqrt{2} +  \frac{1}{2}  )
+\end{equation}
+and 
+\begin{equation}
+M = \frac{\rho_\text{air} r^2 f \sqrt{2\pi} }{\eta_\text{air}}
+\end{equation}
+The scaling factor in Equation~\ref{eq:air} is plotted as a function of frequency in Figure~\ref{fig:drag} and found to be neglibablly close to 1. 
+\begin{figure}[H]
+	\includegraphics[width=0.45\textwidth]{pics/drag}
+	\caption{The scaling factor of Equation~\ref{eq:air} is shown to be negligible for frequencies higher than a tenth of a Hertz}
+	\label{fig:drag}
+\end{figure}
+This can be understood more simply since the decay time was found by~\cite{david} to be on the order of 1 s, which is much larger than $\frac{1}{f}$, therefore the system is under-damped and the frequency is altered negligibly. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%
@@ -594,258 +574,191 @@ Which have theoretical values of
 
 
 
-%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%
-\section{Direct Measurements}
-As a cross check for the predicted frequency parameters $\mathcal{K}$ and $\mathcal{C}_n$, the values of $\mu$ and $B$ were measured for the PPG straws, which are the current straws being used for the panel construction. The Lamina straws that were used in the tests at Rice slightly differ from the PPG straws, which have a total of 800 \r{A} of aluminum and 100 \r{A} of gold. This difference in metallization should not measurably effect $\mu$ and is calculated to have only a few percent effect bending stiffness.  For $\mu$, the weight of a several meter long sample of straw-tubing was measured, while the latter was found by the vertical deflection, $\Delta y$ in the setup illustrated in Figure~\ref{fig:deflect} and the relation
-\begin{equation}
-B = \frac{7  \mu g L^4}{24 \Delta y}
-\end{equation}
+\section{New Experiments}
+\subsection{Pinned Boundary Conditions}
+While the past experiment of Rivera was limited to glued boundary conditions, the theory model extends cleanly to pinned boundary conditions. As a preliminary test of the theory, a new experiment was set up to measure the fundamental frequency of straws of different lengths under zero tension where the ends are free to rotate. Excellent agreement was found between the theory and the new experiment.
+
+
 \begin{figure}[H]
-	\includegraphics[width=0.37\textwidth]{pics/deflect}
-	\caption{A segment of a straw}
-	\label{fig:deflect}
+	\includegraphics[width=0.49\textwidth]{pics/pen}
+	\caption{A short straw under pinned boundary conditions with zero applied tension. The frequency was measured by measuring current modulation in the infrared sensor that sits above the straw. The click-pen was used to induce vibrations.}
+	\label{fig:[pen]}
 \end{figure}
-The outcome  of the density measurement was
-\begin{equation}
-	\mu_\text{mes} = \text{  (3.48 $\pm$ 0.06)e-4  kg m}^{-1}
-\label{eq:mesmu}
-\end{equation}
-which yields
-\begin{equation}
-\boxed{
-\mathcal{K}_\text{mes}  = \text{(167.8 $\pm$ 2.9) m s}^{-1} \text{kg}^{-1/2}
-}
-\end{equation}
-Note that $\mu$ was measured at 10\% relative humidity, while the Rice tests were conducted at 50\%. Additionally, the straws at the rice tests were excessively handled, which raises $\mu$.  The effect of humidity and handling on $\mu$ has not been quantitatively studied however.
 
-
-The measurement of the bending stiffness was found to be highly dependent on the straw's history and handling. To this extent, there was uncertainty in the measurements. It was found that
-\begin{equation}
-	B_\text{mes} = \text{  (3.6 $\pm$ 1.0 )e-3  N$\cdot$m}^2
-\end{equation}
-which is in agreement with both the predicted value in Equations~\ref{eq:b} and \ref{eq:totb}. 
-
-A second approach was taken to measure $B$.  A straw was fixed at either end and held at zero tension. The straw was then plucked and its oscillations were recorded using a 240-fps slow motion camera.   In this scenario however Equation~\ref{eq:full} breaks down. Instead, the formula
-\begin{equation}
-	f \approx \frac{9 \pi}{8 L^2}\sqrt{\frac{B}{\mu}}
-\end{equation}
-can used to determine $B$ once $f$ is found by counting the number of oscillations in a given time interval.
- Note that the above equation was found numerically after from solving the original equations of motion with $T=0$, is a similar manner as was taken for large $T$.  The observed frequency gave a value of 
- \begin{equation}
- B_\text{count} = \text{  (2.7 $\pm$ 1.1 )e-3  N$\cdot$m}^2
- \end{equation}
-which is on the smaller of the other estimates. The above value will be disregarded until a more systematic study is done.
-
-
-
-
-
-
-
-\section{Second Order Frequency Effects}
-A number of additional frequency effects were calculated and found to be insufficient to explain the discrepancy between predicted and measured parameter values. Such effects included the damping caused by air resistance, the reduction of $\mu$ due to straw stretching, second order terms in the frequency relationship, complex boundary conditions (treated in Section~\ref{sec:boun}), straw out of straightness, and shear forces. For the shear, it was found that
-\begin{equation}
-	\frac{B}{\kappa L^2 G A}\approx 0.0033 << 1
-\end{equation}
-for a one meter straw, which means the shear term in the equations of motion may be neglected. The out of straightness or s-shape of the straw can was similarly evaluated and also found to close to zero. 
-
-
- The effect of air resistance was found by considering an a damping term in the equation of motion, under the assumption of laminar flow.  The effect was found to be
-\begin{equation}
-	f_\text{air} = f\sqrt{1 - \frac{\gamma^2}{f^2}}
-	\label{eq:air}
-\end{equation}
-where $\gamma$ is given by
-\begin{equation}
-\gamma = \frac{f A \rho_\text{air}}{M^2} (M  \sqrt{2} +  \frac{1}{2}  )
-\end{equation}
-and 
-\begin{equation}
-	M = \frac{\rho_\text{air} r^2 f \sqrt{2\pi} }{\eta_\text{air}}
-\end{equation}
-The scaling factor in Equation~\ref{eq:air} is plotted as a function of frequency in Figure~\ref{fig:drag} and found to be neglibablly close to 1. 
 \begin{figure}[H]
-	\includegraphics[width=0.45\textwidth]{pics/drag}
-	\caption{The scaling factor of Equation~\ref{eq:air} is shown to be negligible for frequencies higher than a tenth of a Hertz}
-	\label{fig:drag}
+	\includegraphics[width=0.45\textwidth]{pics/sig}
+	\caption{A sample of data from the infrared sensor when detecting the vibrating straw.}
+	\label{fig:sig}
 \end{figure}
-This can be understood more simply since the decay time was found by~\cite{david} to be on the order of 1 s, which is much larger than $\frac{1}{f}$, therefore the system is under-damped and the frequency is altered neglibablly. 
 
-In the following section, plots of the predicted frequency with the incorporation of higher order terms in $\xi$ and stretch corrections to $\mu$ are incorporated for the two extreme boundary condition scenarios, perfectly glued, and pinned (or hinged).  The stretch corrections to $\mu$ are not explicitly shown, but they have less then a percent effect on the frequency. The largest effect, as is clear from the plots, is the behavior at the boundary.
+\begin{figure}[H]
+	\includegraphics[width=0.45\textwidth]{pics/pins}
+	\caption{A plot of the newly measured relationship between frequency and length of straws, with an overlay theoretical curve. Good agreement with the theory model is seen in the overlapping of the two curves, and in the new empirical measurement of $\mathcal{C}$  }
+	\label{fig:pins}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=0.45\textwidth]{pics/res}
+	\caption{above shows the residual between theory and the empirical curves from Figure\ref{fig:pins}. Agreement well below the Hz level is shown for all relevant length straws.  }
+	\label{fig:res}
+\end{figure}
+
+\subsection{Glued Boundary Conditions}
+The fundamental frequency of straws with different lengths and tensions were measured under glued boundary conditions. The results were compared with Rivera's past results and the theory set forth in this document. 
+\begin{figure}[H]
+	\includegraphics[width=0.45\textwidth]{pics/glued}
+	\caption{A straw under glued boundary conditions with a non-zero applied tension. The frequency was measured by measuring current modulation in the infrared sensor that sits above the straw. The click-pen was used to induce vibrations. }
+	\label{fig:glued}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.45\textwidth]{pics/clamp}
+	\caption{A closeup of the glued boundary conditions which were generated with strong clamping.}
+	\label{fig:clamp}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.45\textwidth]{pics/strain}
+	\caption{A picture of the strain gauge used to set and measure the tension in the straws}
+	\label{fig:strain}
+\end{figure}
 
 
-
-\section{Plots}
-Here we include a number of plots of the Rice data and the predicted frequency  with the incorporation of higher order terms in $\xi$ and stretch corrections to $\mu$, for the two extreme boundary condition scenarios.  The measured frequencies, for the most part, lie somewhere in-between those predicted for perfectly glued and hinged boundary conditions. The curves shown use the measured linear density for the PPG straws in Equation~\ref{eq:mesmu} but the calculated bending stiffness for the lamina straws, as in Equation~\ref{eq:totb}.  The reason that the PPG linear density was used is because there was no direct measurement 
+\
 
 
-\label{sec:plots}
 \begin{figure}[H]
 	\includegraphics[width=0.47\textwidth]{pics/1}
-	\caption{The Rice data overlaid with predictions for glued and pinned boundary conditions at various levels of approximation. ``Glued: 1st approx'' is the solution for perfectly glued boundary conditions, it includes up to second order terms in $\xi$ and refers to Equation~\ref{eq:full}. ``Glued 2nd approx'' includes up to first order terms in $\xi$ and refers to Equation~\ref{eq:end}. ``Pinned exact'' is the exact solution for pinned (or hinged) boundary conditions and refers to Equation~\ref{eq:pinsol}. ``Pinned approx'' is the first order expansion of the pinned solution and refers to Equation~\ref{eq:pinapprox}. The curves shown use the the calculated bending stiffness for the lamina straws, as in Equation~\ref{eq:totb}, and, because there are no direct measurements for the linear mass density of the Lamina straws, the measured density of the PPG straws, as in Equation~\ref{eq:mesmu} was used.
+	\caption{The new data overlaid with predictions for a straw with glued boundary conditions at various tensions. Overlaid is the a fit to the data, the average of all fits to the data deriving from different length straws, Rivera's (David's) empirical prediction, and the prediction of a simple string. The new data fits the theory best.
 	}
 	\label{fig:1}
 \end{figure}
 \begin{figure}[H]
 	\includegraphics[width=0.47\textwidth]{pics/2}
-	\caption{The Rice data overlaid with predictions for glued and pinned boundary conditions at various levels of approximation. See Figure~\ref{fig:1} for a more complete description. 
+	\caption{Similar to Figure \ref{fig:1} but with a different length straw. The new data fits the theory best.
 	}
 	\label{fig:2}
 \end{figure}
 \begin{figure}[H]
 	\includegraphics[width=0.47\textwidth]{pics/3}
-	\caption{The Rice data overlaid with predictions for glued and pinned boundary conditions at various levels of approximation. See Figure~\ref{fig:1} for a more complete description. 
-	}
+	\caption{Similar to Figure \ref{fig:1} but with a different length straw. The new data fits the theory best.
+}
 	\label{fig:3}
 \end{figure}
 \begin{figure}[H]
 	\includegraphics[width=0.47\textwidth]{pics/4}
-	\caption{The Rice data overlaid with predictions for glued and pinned boundary conditions at various levels of approximation. See Figure~\ref{fig:1} for a more complete description. 
-	}
+	\caption{Similar to Figure \ref{fig:1} but with a different length straw. The new data fits the theory best.
+}
 	\label{fig:4}
 \end{figure}
 \begin{figure}[H]
 	\includegraphics[width=0.47\textwidth]{pics/5}
-	\caption{The Rice data overlaid with predictions for glued and pinned boundary conditions at various levels of approximation. See Figure~\ref{fig:1} for a more complete description. 
-	}
+	\caption{Similar to Figure \ref{fig:1} but with a different length straw. The new data fits the theory best.
+}
 	\label{fig:5}
 \end{figure}
 \begin{figure}[H]
 	\includegraphics[width=0.47\textwidth]{pics/6}
-	\caption{The Rice data overlaid with predictions for glued and pinned boundary conditions at various levels of approximation. See Figure~\ref{fig:1} for a more complete description. 
-	}
+	\caption{Similar to Figure \ref{fig:1} but with a different length straw. The new data fits the theory best.
+}
 	\label{fig:6}
 \end{figure}
+
+
+
+
 \begin{figure}[H]
-	\includegraphics[width=0.47\textwidth]{pics/7}
-	\caption{The Rice data overlaid with predictions for glued and pinned boundary conditions at various levels of approximation. See Figure~\ref{fig:1} for a more complete description. 
+	\includegraphics[width=0.47\textwidth]{pics/f1}
+	\caption{The frequency residual between the fit from the 1335 mm (Figure\ref{fig:1}) and the theory, the average of all fits (ie average of fits for all length straws), Rivera's (David's) empirical  and the simple string prediction. The theory has the lowest integrated residual.
 	}
-	\label{fig:7}
+	\label{fig:1f}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/f2}
+	\caption{Similar to Figure \ref{fig:1f} but with a different length straw. The theory has the lowest integrated residual.
+	}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/f3}
+	\caption{Similar to Figure \ref{fig:1f} but with a different length straw. The theory has the lowest integrated residual.
+	}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/f4}
+	\caption{Similar to Figure \ref{fig:1f} but with a different length straw. The theory has the lowest integrated residual.
+	}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/f5}
+	\caption{Similar to Figure \ref{fig:1f} but with a different length straw. The theory has the lowest integrated residual.
+	}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/f6}
+	\caption{Similar to Figure \ref{fig:1f} but with a different length straw. The theory has the lowest integrated residual.
+	}
 \end{figure}
 
 
+
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/t1}
+	\caption{The frequency residual, mapped to tension, between the fit from the 1335 mm (Figure\ref{fig:1}) and the theory, the average of all fits (ie average of fits for all length straws), Rivera's (David's) empirical  and the simple string prediction. The theory has the lowest integrated residual.
+	}
+	\label{fig:1t}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/t2}
+	\caption{Similar to Figure \ref{fig:1t} but with a different length straw. The theory has the lowest integrated residual.
+	}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/t3}
+	\caption{Similar to Figure \ref{fig:1t} but with a different length straw. The theory has the lowest integrated residual.
+	}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/t4}
+	\caption{Similar to Figure \ref{fig:1t} but with a different length straw. The theory has the lowest integrated residual.
+	}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/t5}
+	\caption{Similar to Figure \ref{fig:1t} but with a different length straw. The theory has the lowest integrated residual.
+	}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/t6}
+	\caption{Similar to Figure \ref{fig:1t} but with a different length straw. The theory has the lowest integrated residual.
+	}
+\end{figure}
+
+
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/csum}
+	\caption{The parameter $\mathcal{C}$ as determined by the new data, David's empirical model, and the theory. The new data matches best to the theory.
+	}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/ksum}
+	\caption{The parameter $\mathcal{K}$ as determined by the new data, David's empirical model, and the theory. The new data matches best to the theory.
+	}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=0.47\textwidth]{pics/ksum}
+	\caption{The  $\mathcal{K}$ $\mathcal{C}$  parameters as determined by the new data, David's empirical model, and the theory. The new data matches best to the theory.
+	}
+\end{figure}
 
 \section{Conclusion}
-By the inclusion of restoring forces that arise both from tension applied and bending stiffness intrinsic to the Lamina straws, we obtained an equation of motion that, given the appropriate boundary conditions, yields natural frequencies with a functional form identical to what was found experimentally. However, discrepancies between the predicted and experimental values of two parameters were found.  Several explanations for the discrepancies have been ruled out, including many additional restoring forces in the equation of motion, by virtue of their calculated smallness. While the reason for the discrepancy is at present unclear, the plots of Section~\ref{sec:plots} indicate that the Lamina straws used by\cite{david} may have had a slightly larger linear mass density than what was assumed, which could arise from the fact that they were manufactured differently than the well characterized PPG straws, and through excessive handling and humidity at the time of testing. Additionally, the plots may indicate that the straws had a non-trivial behavior at the boundaries. Parameter values aside, the functional form of the natural frequencies for the mu2e straw-tubes are now understood.
+By the inclusion of restoring forces that arise both from tension applied and bending stiffness intrinsic to the Mu2e straws, we obtained an equation of motion that, given the appropriate boundary conditions, yields natural frequencies with a functional form identical to what was found empirically by Rivera. However, discrepancies arose for values of two parameters in the two models.  A series of diverse experiments were carried out, all of which corroborated the theory model to high precision. It is likely that, in the previous experiment, the straws had non-trivial behavior at the boundaries. This was a factor that special attention was given to in the new set of experiments.  \\
+\\
+The corroboration of the theory with new data suggests that vibrational motion of mu2e straw-tubes is now well understood, but has been treated inaccurately in the past. This has consequences for the design and lifetime of the Mu2e tracker, the details of which are outside the scope of this document.
 
 
 
 
-\section{More Direct Measurements}
-In the limit as tension goes to zero, equation~\ref{eq:clamped2} becomes
-\begin{equation}
-f_1 =  \frac{\pi}{2L^2}\sqrt{\frac{B}{\mu}} = \frac{\pi\mathcal{C}}{2L^2}
-\end{equation}
 
-\begin{equation}
-\lim_{T\to0} f^{\text{pinned}}_1 = \frac{\pi\mathcal{C}}{2L^2}
-\end{equation}
-
-
-\begin{figure}[H]
-	\includegraphics[width=0.47\textwidth]{pics/quick}
-	\caption{stuff
-	}
-	\label{fig:quick}
-\end{figure}
-
-
-\begin{equation}
-\mathcal{C} \equiv \sqrt{\frac{B}{\mu}}
-\end{equation}
-
-
-\begin{equation}
-	\mathcal{K} \equiv \sqrt{\frac{g}{\mu}} = \text{ 157.29  m s}^{-1} \text{kg}^{-1/2}
-\end{equation}  
-
-
-
-\begin{equation}
-	f _1= \frac{\mathcal{K}}{2L}\sqrt{m} + \frac{\mathcal{C}}{L^2}
-\end{equation}
-
-\begin{equation}
-	f _1= \frac{\mathcal{K}}{2L_\text{eff}}\sqrt{m_\text{eff}} + \frac{\mathcal{C}}{L_\text{eff}^2}
-\end{equation}
-
-
-
-\begin{equation}
-	f _1= \frac{\sqrt{m}\mathcal{K}}{2L}\sqrt{\frac{\pi^2\mathcal{C}^2}{L^2} + 1}
-\end{equation}
-
-
-\begin{equation}
-	B = \frac{5 \mu g L^4}{384 \Delta y}
-\end{equation}
-
-The length of the straw under tension is 
-\begin{equation}
-	L_{\text{eff}} = L(1+TC_s)
-\end{equation}
-where the stretch coefficient $C_s = 8.9e-3 \frac{\Delta L}{L \text{Kg}}$ . So we have 
-\begin{equation}
-	\mu_{\text{eff}} = \frac{\mu}{(1+TC_s)}
-\end{equation}
-and thus,
-\begin{equation}
-	%\mu_{\text{eff}} = \frac{\mu}{(1+TC_s)}
-	\mathcal{C}_\text{eff} = \sqrt{\frac{B}{\mu_{\text{eff}}}} = \sqrt{\frac{B(1+TC_s)}{\mu}} = \mathcal{C}\sqrt{(1+TC_s)}
-\end{equation}
-and
-\begin{equation}
-	%\mu_{\text{eff}} = \frac{\mu}{(1+TC_s)}
-	\mathcal{K}_\text{eff} = \sqrt{\frac{g}{\mu_{\text{eff}}}} = \sqrt{\frac{g(1+TC_s)}{\mu}} = \mathcal{K}\sqrt{(1+TC_s)}
-\end{equation}
-
-\begin{equation}
-	\mathcal{K}_\text{eff} = \mathcal{K}\sqrt{(1+TC_s)}
-\end{equation}
-
-However, $\mathcal{C}$ is proportional to $(r_\text{out}^4 - r_\text{inner}^4)$.  The corrected cross sectional area is 
-\begin{equation}
-A_\text{eff} = \frac{A}{(1+TC_s)} = \pi \frac{(R^2 - r^2)}{(1+TC_s)} 
-\end{equation}
-\begin{equation}
-B_\text{eff} \approx \frac{B}{1+TC_s}
-\end{equation}
-\begin{equation}
-\mathcal{C}_\text{eff} = \mathcal{C}
-\end{equation}
-
-\begin{equation}
-m_\text{eff} = 0.983(m + \frac{15}{L 1000}) 
-\end{equation}
-
-
-
-\begin{equation}
-(R^2 - r^2)(R^2 + r^2) = R^4 - r^4
-\end{equation}
-But the second factor, $(R^2 + r^2)$, is not really changed, so you end up with a factor of $\frac{1}{1 + TC_s}$ to correct the bending stiffness so $\mathcal{C}$ is unchanged!!!
-\begin{equation}
-\mathcal{K} = \frac{2}{\sqrt{m}} (Lf_1 - \frac{\mathcal{C}}{L})
-\end{equation}
-
-\begin{equation}
-\mathcal{C} =  (L^2 f_1 - \frac{L\mathcal{K}\sqrt{m}}{2} )
-\end{equation}
-
-
-\begin{equation}
-I = \frac{\pi}{4}(R^4 - r^4)
-\end{equation}
-
-So the screw actually moved the straws in the direction that lessens the tension.  For a quarter turn, which is about what Arlette did, it moved about 20 mil, which is 0.000508 meters. Thus since Cs = 8.9e-3, we have a change in tension for a 1 meter straw of about 57 g!!! thats huge.
-
-straw strech:
-
-$E = \frac{1}{C_s A}$ \\
-$B = E I$ \\
-$C = \sqrt{\frac{B}{\mu}}$
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
@@ -854,21 +767,18 @@ $C = \sqrt{\frac{B}{\mu}}$
 \begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
 
 \bibitem{tdr}
-Mu2e TDR 
+Mu2e TDR (internal Mu2e Document)
 
 \bibitem{fletcher}
-Fletcher; The Physics of Musical Instruments
+Fletcher, The Physics of Musical Instruments
 
 \bibitem{david}
-David Rivera; Rice University Senior Thesis
+David Rivera, Mu2e Straw Tension Measurements (internal Mu2e Document)
 
 \bibitem{dick}
-JC Bryner;  Richard Feynman on piano tuning
+JC Bryner, Richard Feynman on piano tuning
 
 
-
-%\bibitem{zhao}
-%T. Zhao et al, \ 1993, NIM A 340 485-490
 
 \end{thebibliography}
 
@@ -878,6 +788,301 @@ JC Bryner;  Richard Feynman on piano tuning
 
 \end{document}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% SCRAP %%%%%%%%%%%%
+%
+%The Young's modulus of Mylar is 
+%\begin{equation}
+%	E = \text{4.90e9 Pa}
+%\end{equation}
+%which gives a bending stiffness (assuming 18)
+%\begin{equation}
+%B = EI = \text{  4.377e-3  N$\cdot$m}^2
+%\label{eq:b}
+%\end{equation}
+%which gives a bending stiffness (assuming 15)
+%\begin{equation}
+%B = EI = \text{  3.575e-3  N$\cdot$m}^2
+%\end{equation}
+%When assuming 12 $\mu$m wall thickness one gets
+%\begin{equation}
+%B = 0.00286562303
+%\end{equation}
+%
+%
+%The density of Mylar is
+%\begin{equation}
+%\rho = \text{1390 kg m}^{-3}
+%\end{equation}
+%Thus the linear density is
+%\begin{equation}
+%\mu = A \rho = \text{   3.266e-4  kg m}^{-1}
+%\end{equation}
+%The constant $\mathcal{K}$ is thus
+%\begin{equation}
+%\boxed{
+%	\mathcal{K} = \sqrt{\frac{g}{\mu}} = \text{ 173.2   m s}^{-1} \text{kg}^{-1/2}
+%}
+%\end{equation}  
+%as compared with what was found experimentally, 
+%\begin{equation}
+%\mathcal{K}^\text{exp}  = \text{(144.93 $\pm$ 2.49) m s}^{-1} \text{kg}^{-1/2}
+%\end{equation}
+%Finally, the constant $\mathcal{C}_n$ is
+%\begin{equation}
+%\boxed{
+%\mathcal{C}_n =  n \sqrt{\frac{B}{\mu}} = n\cdot\text{ 3.66  m}^{2} \text{s}^{-1}
+%}
+%\end{equation} 
+%as compared with what was found experimentally,
+%\begin{equation}
+%	\mathcal{C}^\text{exp}_1 = \text{ (6.18 $\pm$ 0.34)  m}^{2} \text{s}^{-1}
+%\end{equation} 
+%
+%%One source of uncertainty in the predicted values of $\mathcal{K}$ and $\mathcal{C}$ come from neglecting the glue and metallization layers on the Mylar.  The exclusion of this material results in an underestimation of both the linear mass density and the bending stiffness. This should result in a overestimate of $\mathcal{K}$ and an underestimate for $\mathcal{C}_n$, as is what seems to be the case.  Sources of experimental uncertainty are discussed in \cite{david}.  
+%
+%Next we evaluate the effect of the metallization layers for the Lamina straws used by \cite{david}. The second moment of area of a 500 \r{A} layer of copper on the inside of the tube is
+%\begin{equation}
+%	I_c = \frac{\pi}{4}(0.0025^4 - 2.49995^4) = 2.4540\text{e-15 m}^4 
+%\end{equation}
+%while for 1000 \r{A} of aluminum on the outside it is
+%\begin{equation}
+%I_a = \frac{\pi}{4}( 0.0025001^4 - 0.0025^4) = 4.9090\text{e-15 m}^4 
+%\end{equation}
+%
+%The Young's modulus of copper is
+%\begin{equation}
+%E_c = 1\text{1.17e11 Pa} 
+%\end{equation}
+%and for aluminum, it is
+%\begin{equation}
+%E_a = \text{7e10 Pa} 
+%\end{equation}
+%However, it has been found that the aluminum layer on similar straws oxidizes all the way through, forming a layer of alumina which has a Young's modulus around
+%\begin{equation}
+%E_a \approx \text{4e11 Pa} 
+%\end{equation}
+%The copper layer also oxidizes, but the Young's modulus of CuO is not greatly different than that of Cu.
+%So, the bending stiffness of the copper and aluminum layers are respectively
+%\begin{equation}
+%B_c = \text{2.87e-4  N$\cdot$m}^2
+%\end{equation}
+%and
+%\begin{equation}
+%B_a = \text{1.9636e-3  N$\cdot$m}^2
+%\end{equation}
+%and the total bending stiffness is given by adding the layers
+%\begin{equation}
+%B^\text{lamina} = B + B_a + B_c = \text{6.62709e-3  N$\cdot$m}^2
+%\label{eq:totb}
+%\end{equation}
+%This gives a modified prediction for the parameter
+%\begin{equation}
+%\boxed{
+%	\mathcal{C}^\text{lamina}_n =  n\cdot\text{ 4.50 m}^{2} \text{s}^{-1}
+%}
+%\end{equation} 
+%which is also smaller than the experimental value.
+%
+%
+%
+%\section{Virtual Mass}
+%The density of air is 1.225 kg/m$^3$, the cross sectional area is 0.000019625 m$^-2$ thus the added mass from air inside the straw is 
+%\begin{equation}
+%\mu_{\text{air}} = \text{2.404e-5  kg/m}
+%\end{equation}
+%and the virtual mass adds the same amount,
+%\begin{equation}
+%\mu_{\text{virtual}} = \text{2.404e-5  kg/m}
+%\end{equation}
+%thus the total linear mass density is 
+%\begin{equation}
+%\mu_{\text{total}} = \text{3.7468e-4  kg/m}
+%\end{equation}
+%Alternatively, adding the two air terms to the measured linear density gives
+%\begin{equation}
+%\mu_{\text{total}} = \text{3.9608e-4  kg/m}
+%\end{equation}
+%which gives 
+%\begin{equation}
+%\boxed{
+%	\mathcal{K} = \sqrt{\frac{g}{\mu}} = \text{ 157.29  m s}^{-1} \text{kg}^{-1/2}
+%}
+%\end{equation}  
+
+
+%What remains is to justify neglecting second order and higher terms in the dimensionless parameter $\xi^2$. The straws are initially tensioned at 0.7 kgf, or 6.8 n.  To be conservative we suppose the tension in a straw is 2 n.  We then have
+%\begin{equation}
+%	\xi \approx \frac{0.06}{L} 
+%\end{equation}
+%where $L$ is measured in meters.
+%To illustrate the last point, let us assume that the excluded material is responsible for the discrepancy in $\mathcal{K}$, then the true linear mass density is 
+%\begin{equation}
+%	\mu^\text{exp} = \mu (\frac{\mathcal{K}^\text{exp}}{\mathcal{K}})^2
+%\end{equation}
 
 
 
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%\section{Direct Measurements}
+%As a cross check for the predicted frequency parameters $\mathcal{K}$ and $\mathcal{C}_n$, the values of $\mu$ and $B$ were measured for the PPG straws, which are the current straws being used for the panel construction. The Lamina straws that were used in the tests at Rice slightly differ from the PPG straws, which have a total of 800 \r{A} of aluminum and 100 \r{A} of gold. This difference in metallization should not measurably effect $\mu$ and is calculated to have only a few percent effect bending stiffness.  For $\mu$, the weight of a several meter long sample of straw-tubing was measured, while the latter was found by the vertical deflection, $\Delta y$ in the setup illustrated in Figure~\ref{fig:deflect} and the relation
+%\begin{equation}
+%B = \frac{7  \mu g L^4}{24 \Delta y}
+%\end{equation}
+%\begin{figure}[H]
+%	\includegraphics[width=0.37\textwidth]{pics/deflect}
+%	\caption{A segment of a straw}
+%	\label{fig:deflect}
+%\end{figure}
+%The outcome  of the density measurement was
+%\begin{equation}
+%	\mu_\text{mes} = \text{  (3.48 $\pm$ 0.06)e-4  kg m}^{-1}
+%\label{eq:mesmu}
+%\end{equation}
+%which yields
+%\begin{equation}
+%\boxed{
+%\mathcal{K}_\text{mes}  = \text{(167.8 $\pm$ 2.9) m s}^{-1} \text{kg}^{-1/2}
+%}
+%\end{equation}
+%Note that $\mu$ was measured at 10\% relative humidity, while the Rice tests were conducted at 50\%. Additionally, the straws at the rice tests were excessively handled, which raises $\mu$.  The effect of humidity and handling on $\mu$ has not been quantitatively studied however.
+%
+%
+%The measurement of the bending stiffness was found to be highly dependent on the straw's history and handling. To this extent, there was uncertainty in the measurements. It was found that
+%\begin{equation}
+%	B_\text{mes} = \text{  (3.6 $\pm$ 1.0 )e-3  N$\cdot$m}^2
+%\end{equation}
+%which is in agreement with both the predicted value in Equations~\ref{eq:b} and \ref{eq:totb}. 
+%
+%A second approach was taken to measure $B$.  A straw was fixed at either end and held at zero tension. The straw was then plucked and its oscillations were recorded using a 240-fps slow motion camera.   In this scenario however Equation~\ref{eq:full} breaks down. Instead, the formula
+%\begin{equation}
+%	f \approx \frac{9 \pi}{8 L^2}\sqrt{\frac{B}{\mu}}
+%\end{equation}
+%can used to determine $B$ once $f$ is found by counting the number of oscillations in a given time interval.
+% Note that the above equation was found numerically after from solving the original equations of motion with $T=0$, is a similar manner as was taken for large $T$.  The observed frequency gave a value of 
+% \begin{equation}
+% B_\text{count} = \text{  (2.7 $\pm$ 1.1 )e-3  N$\cdot$m}^2
+% \end{equation}
+%which is on the smaller of the other estimates. The above value will be disregarded until a more systematic study is done.
+
+%In the following section, plots of the predicted frequency with the incorporation of higher order terms in $\xi$ and stretch %corrections to $\mu$ are incorporated for the two extreme boundary condition scenarios, perfectly glued, and pinned (or hinged).  %The stretch corrections to $\mu$ are not explicitly shown, but they have less then a percent effect on the frequency. The largest %effect, as is clear from the plots, is the behavior at the boundary.
+
+
+
+
+
+
+%\section{More Direct Measurements}
+%In the limit as tension goes to zero, equation~\ref{eq:clamped2} becomes
+%\begin{equation}
+%f_1 =  \frac{\pi}{2L^2}\sqrt{\frac{B}{\mu}} = \frac{\pi\mathcal{C}}{2L^2}
+%\end{equation}
+%
+%\begin{equation}
+%\lim_{T\to0} f^{\text{pinned}}_1 = \frac{\pi\mathcal{C}}{2L^2}
+%\end{equation}
+%
+%
+%
+%
+%\begin{equation}
+%\mathcal{C} \equiv \sqrt{\frac{B}{\mu}}
+%\end{equation}
+%
+%
+%\begin{equation}
+%\mathcal{K} \equiv \sqrt{\frac{g}{\mu}} = \text{ 157.29  m s}^{-1} \text{kg}^{-1/2}
+%\end{equation}  
+%
+%
+%
+%\begin{equation}
+%f _1= \frac{\mathcal{K}}{2L}\sqrt{m} + \frac{\mathcal{C}}{L^2}
+%\end{equation}
+%
+%\begin{equation}
+%f _1= \frac{\mathcal{K}}{2L_\text{eff}}\sqrt{m_\text{eff}} + \frac{\mathcal{C}}{L_\text{eff}^2}
+%\end{equation}
+%
+%
+%
+%\begin{equation}
+%f _1= \frac{\sqrt{m}\mathcal{K}}{2L}\sqrt{\frac{\pi^2\mathcal{C}^2}{L^2} + 1}
+%\end{equation}
+%
+%
+%\begin{equation}
+%B = \frac{5 \mu g L^4}{384 \Delta y}
+%\end{equation}
+%
+%The length of the straw under tension is 
+%\begin{equation}
+%L_{\text{eff}} = L(1+TC_s)
+%\end{equation}
+%where the stretch coefficient $C_s = 8.9e-3 \frac{\Delta L}{L \text{Kg}}$ . So we have 
+%\begin{equation}
+%\mu_{\text{eff}} = \frac{\mu}{(1+TC_s)}
+%\end{equation}
+%and thus,
+%\begin{equation}
+%%\mu_{\text{eff}} = \frac{\mu}{(1+TC_s)}
+%\mathcal{C}_\text{eff} = \sqrt{\frac{B}{\mu_{\text{eff}}}} = \sqrt{\frac{B(1+TC_s)}{\mu}} = \mathcal{C}\sqrt{(1+TC_s)}
+%\end{equation}
+%and
+%\begin{equation}
+%%\mu_{\text{eff}} = \frac{\mu}{(1+TC_s)}
+%\mathcal{K}_\text{eff} = \sqrt{\frac{g}{\mu_{\text{eff}}}} = \sqrt{\frac{g(1+TC_s)}{\mu}} = \mathcal{K}\sqrt{(1+TC_s)}
+%\end{equation}
+%
+%\begin{equation}
+%\mathcal{K}_\text{eff} = \mathcal{K}\sqrt{(1+TC_s)}
+%\end{equation}
+%
+%However, $\mathcal{C}$ is proportional to $(r_\text{out}^4 - r_\text{inner}^4)$.  The corrected cross sectional area is 
+%\begin{equation}
+%A_\text{eff} = \frac{A}{(1+TC_s)} = \pi \frac{(R^2 - r^2)}{(1+TC_s)} 
+%\end{equation}
+%\begin{equation}
+%B_\text{eff} \approx \frac{B}{1+TC_s}
+%\end{equation}
+%\begin{equation}
+%\mathcal{C}_\text{eff} = \mathcal{C}
+%\end{equation}
+%
+%\begin{equation}
+%m_\text{eff} = 0.983(m + \frac{15}{L 1000}) 
+%\end{equation}
+%
+%
+%
+%\begin{equation}
+%(R^2 - r^2)(R^2 + r^2) = R^4 - r^4
+%\end{equation}
+%But the second factor, $(R^2 + r^2)$, is not really changed, so you end up with a factor of $\frac{1}{1 + TC_s}$ to correct the bending stiffness so $\mathcal{C}$ is unchanged!!!
+%\begin{equation}
+%\mathcal{K} = \frac{2}{\sqrt{m}} (Lf_1 - \frac{\mathcal{C}}{L})
+%\end{equation}
+%
+%\begin{equation}
+%\mathcal{C} =  (L^2 f_1 - \frac{L\mathcal{K}\sqrt{m}}{2} )
+%\end{equation}
+%
+%
+%\begin{equation}
+%I = \frac{\pi}{4}(R^4 - r^4)
+%\end{equation}
+%
+%So the screw actually moved the straws in the direction that lessens the tension.  For a quarter turn, which is about what Arlette did, it moved about 20 mil, which is 0.000508 meters. Thus since Cs = 8.9e-3, we have a change in tension for a 1 meter straw of about 57 g!!! thats huge.
+%
+%straw strech:
+%
+%$E = \frac{1}{C_s A}$ \\
+%$B = E I$ \\
+%$C = \sqrt{\frac{B}{\mu}}$
